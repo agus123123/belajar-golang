@@ -4,27 +4,21 @@ import (
 	"fmt"
 )
 
-func updateName(x string) string {
-	x = "Gita"
-	return x
-}
-
-func updateMenu(y map[string]float64) {
-	y["naspad"] = 25000
+func updateName(x *string) string {
+	*x = "Gita"
+	return *x
 }
 func main() {
 	name := "Agus"
 
-	name = updateName(name)
+	// fmt.Println("Before update:", &name)
+	m := &name
+	// fmt.Println("After update:", m)
 	fmt.Println(name)
 
-	menu := map[string]float64{
-		"naspad": 20000,
-		"laptop": 5000,
-		"eskrim": 10000,
-	}
+	// fmt.Println("value of m:", *m)
 
-	updateMenu(menu)
-	fmt.Println(menu)
+	updateName(m)
+	fmt.Println(name)
 
 }
