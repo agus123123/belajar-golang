@@ -4,37 +4,27 @@ import (
 	"fmt"
 )
 
+func updateName(x string) string {
+	x = "Gita"
+	return x
+}
+
+func updateMenu(y map[string]float64) {
+	y["naspad"] = 25000
+}
 func main() {
+	name := "Agus"
+
+	name = updateName(name)
+	fmt.Println(name)
+
 	menu := map[string]float64{
-		"Burger": 5.99,
-		"Pizza":  8.99,
-		"Salad":  4.99,
-		"Soda":   1.99,
+		"naspad": 20000,
+		"laptop": 5000,
+		"eskrim": 10000,
 	}
 
+	updateMenu(menu)
 	fmt.Println(menu)
-	fmt.Println(menu["Pizza"])
 
-	// loping
-
-	for k, v := range menu {
-		fmt.Println(k, ":", v)
-	}
-
-	//ints as key type
-
-	phonebook := map[int]string{
-		1234567890: "Alice",
-		9876543210: "Bob",
-		5555555555: "Charlie",
-	}
-
-	fmt.Println(phonebook)
-	fmt.Println(phonebook[1234567890])
-
-	phonebook[1234567890] = "David"
-	fmt.Println(phonebook)
-
-	phonebook[5555555555] = "Agus"
-	fmt.Println(phonebook)
 }
